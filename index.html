@@ -1,652 +1,200 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Responsive Portfolio Template">
-  <meta name="author" content="Suvrat Jain">
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
-    :root {
-      --clr-background: rgb(247, 244, 244);
-      --clr-gray: rgb(119, 114, 114);
-      --font-main: "Montserrat", sans-serif;
-      --clr-dark-gray: #262626;
-      --clr-dark-black: #333;
-      --clr-dark-text: rgb(226, 225, 225);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Hind Madurai", sans-serif;
-      margin: 0 auto;
-      overflow-x: hidden;
-    }
-
-    .wrapper {
-      background-color: var(--clr-background);
-    }
-
-    /* -------------------------Header/Navbar */
-    header {
-      font-family: var(--font-main);
-      padding-top: 30px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    .navbar {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-bottom: 60px;
-    }
-
-    .navbar__ul {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      list-style-type: none;
-      width: 100%;
-      max-width: 500px;
-    }
-
-    .navbar__ul .name {
-      font-size: 23px;
-      font-weight: 600;
-    }
-
-    .navbar__ul a {
-      text-decoration: none;
-      color: black;
-    }
-
-    .navbar__ul li {
-      background: rgba(235, 230, 230, 0.3);
-      width: 50%;
-      text-align: center;
-      margin-top: 2px;
-      margin-bottom: 2px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-    }
-
-    .link,
-    .portfolio__header,
-    footer h2 {
-      text-transform: uppercase;
-    }
-
-    .header__container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 40px;
-      margin-bottom: 15px;
-      padding-bottom: 2rem;
-      margin: 0 auto;
-      max-width: 80%;
-    }
-
-    .header__container img {
-      width: 70%;
-    }
-
-    .header__text {
-      width: 100%;
-      margin-top: 20px;
-      line-height: 1.5rem;
-      text-align: center;
-    }
-
-    /* End of Header/Navbar--------------------- */
-
-    /* Portfolio section ----------------------- */
-    .portfolio,
-    .portfolio__container {
-      display: flex;
-    }
-
-    .portfolio {
-      background-color: rgb(238, 237, 237);
-      margin-top: 2.5rem;
-      padding-top: 3rem;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    .portfolio__header {
-      font-family: var(--font-main);
-      font-size: 2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .portfolio__container {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: auto;
-      place-items: center;
-      grid-gap: 0.5rem;
-      text-align: center;
-      align-items: stretch;
-      width: 100%;
-      padding: 0.5rem;
-    }
-
-    .card {
-      margin: 1rem 0;
-      border: 1.5px solid #888;
-      padding: 0.5rem;
-      gap: 1rem;
-      width: 350px;
-      max-width: 100%;
-      height: 100%;
-    }
-
-    .card img {
-      width: 25%;
-      margin-bottom: 1rem;
-    }
-
-    .card h2 {
-      font-family: var(--font-main);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      font-size: 20px;
-    }
-
-    .text-container {
-      width: 70%;
-      margin: 0 auto;
-    }
-
-    /* End of services------------------------ */
-
-    /* Skills --------------------------------- */
-    .skills {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .skills h2 {
-      font-family: var(--font-main);
-      text-transform: uppercase;
-      font-size: 2rem;
-    }
-
-    .skills-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 1rem;
-      margin-top: 2rem;
-      text-align: center;
-    }
-
-    .skills__item {
-      margin-bottom: 1rem;
-      cursor: pointer;
-    }
-
-    .skills__item img:hover {
-      transform: scale(1.1);
-      transition: ease-out 0.3s;
-    }
-
-    .skills img {
-      max-width: 80px;
-      margin-bottom: -5px;
-    }
-
-    /* Footer --------------------------------- */
-
-    footer {
-      font-family: var(--font-main);
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      width: 100%;
-      background-color: var(--clr-background);
-    }
-
-    .footer__nav {
-      width: 100%;
-      display: flex;
-      min-height: 30px;
-      padding: 10px;
-      bottom: 0;
-      text-align: center;
-      justify-content: space-between;
-    }
-
-    footer h2 {
-      font-size: 2rem;
-      margin-top: 2rem;
-    }
-
-    .footer__nav-links {
-      display: none;
-    }
-
-    .footer__nav-links li a {
-      text-decoration: none;
-      color: black;
-      text-transform: uppercase;
-    }
-
-    .footer__nav-hr {
-      width: 100%;
-    }
-
-    footer p {
-      max-width: 400px;
-      padding-bottom: 1rem;
-      margin: 0 auto;
-    }
-
-    .to-top {
-      list-style-type: none;
-      margin-right: 10px;
-      justify-self: flex-end;
-    }
-
-    .to-top a {
-      text-decoration: none;
-      color: black;
-    }
-
-    @media screen and (min-width: 768px) {
-      .header__container {
-        min-width: 600px;
-      }
-
-      header {
-        padding-bottom: 4rem;
-      }
-
-      .navbar {
-        width: 100%;
-        display: flex;
-        bottom: 0;
-        justify-content: space-between;
-        padding-left: 4rem;
-        padding-right: 4rem;
-      }
-
-      .navbar ul {
-        display: flex;
-        flex-direction: row;
-      }
-
-      .navbar__ul li {
-        padding: 5px 15px 15px 10px;
-        background-color: transparent;
-      }
-
-      .header__container {
-        display: flex;
-        flex-direction: row-reverse;
-        margin-bottom: 15px;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .header__container img {
-        max-width: 300px;
-      }
-
-      .header__container p {
-        max-width: 350px;
-        text-align: left;
-      }
-
-      /* Portfolio section at 768----------- */
-      .portfolio__container {
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 100%;
-        max-width: 1165px;
-      }
-
-      /* Skills at 768 ------------------- */
-
-      .skills-container {
-        flex-direction: row;
-        justify-content: center;
-        flex-grow: 1;
-        width: 100%;
-      }
-
-      .skills h2 {
-        margin-bottom: -10px;
-        text-transform: uppercase;
-        font-size: 2rem;
-      }
-
-      .skills__item {
-        margin-left: 20px;
-        margin-right: 20px;
-      }
-
-      /* Footer at 768px ---------------- */
-      footer {
-        display: flex;
-        align-items: center;
-      }
-
-      .phone,
-      .email {
-        margin-right: 8px;
-      }
-
-      .footer__nav {
-        width: 95%;
-      }
-
-      .footer__nav h2 {
-        text-transform: none;
-      }
-
-      .footer__nav-links {
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        margin-left: auto;
-      }
-
-      .footer__nav-links li {
-        padding: 5px 10px 10px 10px;
-        text-decoration: none;
-      }
-
-      .footer__nav-hr {
-        width: 95%;
-        border-color: rgb(255, 255, 255);
-      }
-
-      .to-top {
-        display: none;
-      }
-    }
-
-    /* min width 1024 ---------------------------------- */
-    @media screen and (min-width: 1024px) {
-
-      .navbar,
-      .navbar__ul,
-      .header__container {
-        display: flex;
-      }
-
-      .navbar {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .navbar__ul {
-        flex-direction: row;
-      }
-
-      .navbar__ul li {
-        background-color: transparent;
-      }
-
-      .navbar__ul .link {
-        margin: 0;
-      }
-
-      .header__container {
-        flex-direction: row-reverse;
-        margin-bottom: 15px;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .header__container img {
-        max-width: 330px;
-      }
-
-      .header__text {
-        max-width: 400px;
-        text-align: center;
-      }
-
-      /* Portfolio section------------------------- */
-      .portfolio__container {
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 100%;
-      }
-
-      /* End Portfolo------------------------------ */
-    }
-
-    /* Dark mode------------------------------- */
-    button[class="darkmode"] {
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-      background-color: white;
-      border: 1px solid rgb(43, 43, 43);
-      border-radius: 50%;
-    }
-
-    .darkmode .portfolio {
-      background-color: var(--clr-dark-black);
-      color: var(--clr-dark-text);
-    }
-
-    .darkmode footer {
-      background-color: var(--clr-dark-black);
-      color: var(--clr-dark-text);
-    }
-
-    .darkmode .wrapper {
-      background-color: var(--clr-dark-black);
-      color: var(--clr-dark-text);
-    }
-
-    .darkmode .navbar__ul li {
-      color: var(--clr-dark-text);
-      background-color: transparent;
-    }
-
-    .darkmode a[href] {
-      color: var(--clr-dark-text);
-    }
-
-    @media screen and (min-width: 1500px) {
-      body {
-        max-width: 1500px;
-      }
-    }
-
-    @media screen and (max-width: 1024px) {
-      .portfolio__container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      }
-    }
-  </style>
-
-  <title>Portfolio Worakanya</title>
-  <!-- Bootstrap core CSS -->
-
-
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
-
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farman | Home</title>
+
+    <!-- Font (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="https://i.ibb.co/yQj6r8T/fav-logo.png" type="image/x-icon">
+    <!-- Font Awsome Icons -->
+    <script src="https://kit.fontawesome.com/2786bc3471.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class='wrapper'>
-    <div class="container">
-      <header id="home">
-        <nav class="navbar">
-          <h2 class='name'>Sachin Samal</h2>
-          <ul class="navbar__ul">
-            <li class='link'><a href="#portfolio">Projects</a></li>
-            <li class='link'><a href="#skills">Skills</a></li>
-            <li class='link'><a href="#contact">Contact</a></li>
-            <li>
-              <!-- Dark Theme Toggle  -->
-              <button class='darkmode'><i class="fas fa-moon"></i></button>
-            </li>
-          </ul>
-        </nav>
-        <div class="header__container">
-          <img src="https://avatars.githubusercontent.com/u/88958992?v=4" alt="profile-image">
-          <div class="header__text__container">
-            <p class="header__text">Hi! I am a front-end designer and developer. Here, I've created a simple beginner
-              friendly portfolio template responsive across different browsers and devices. Feel free to use and make
-              any changes as per your need.</p>
-          </div>
+    <!------------------------------ Home ------------------------------>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="https://i.ibb.co/DMD065m/logo.png" class="logo">
+                <ul id="mobile-menu">
+                    <li><a href="#header">Home<span class="color">.</span></a></li>
+                    <li><a href="#about">About<span class="color">.</span></a></li>
+                    <li><a href="#services">Services<span class="color">.</span></a></li>
+                    <li><a href="#portfolio">Portfolio<span class="color">.</span></a></li>
+                    <li><a href="#contact">Contact Me<span class="color">.</span></a></li>
+                    <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+                </ul>
+                <p onclick="openMenu()"><i class="fa-solid fa-bars" onclick="openMenue()"></i></p>
+            </nav>
+            <div class="header-text">
+                <p>A WEB LEARNER<span class="color">_</span></p>
+                <h1 class="main-title">Salam, I'm <span class="color">F</span>arman Ali<br>
+                    Crafting <span class="bgcolor">Digital Experiences</span></h1>
+            </div>
+
         </div>
-      </header>
+    </div>
+    <!------------------------------ About ------------------------------>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="https://i.ibb.co/y58ZtLB/user.png" alt="users">
+                </div>
+                <div class="about-col-2">
+                    <h2 class="sub-title">About Me<span class="color">.</span></h2>
+                    <p>Web developer with expertise in creating innovative and user-friendly websites. Skilled in HTML,
+                        CSS, JavaScript, and various web development tools. Committed to delivering high-quality work
+                        with exceptional attention to detail. Passionate about exploring new technologies and finding
+                        creative solutions to complex problems.</p>
+                    <ul>
+                        <li class="tab-links active-link" onclick="openTab('skills')">Skills</li>
+                        <li class="tab-links" onclick="openTab('education')">Education</li>
+                        <li class="tab-links" onclick="openTab('experiences')">Experiences</li>
+                    </ul>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <h3 class="bgcolor">Web Designing</h3>
+                        <p>Creating Innovative Designs</p>
+
+                        <h3 class="bgcolor">Entrepreneurship</h3>
+                        <p>Using technology for earning</p>
+
+                        <h3 class="bgcolor">Blogging</h3>
+                        <p>Covering the trends in Tech</p>
+
+                    </div>
+
+                    <div class="tab-contents education" id="education">
+                        <h3 class="bgcolor">2020 - Present</h3>
+                        <p>BS Information Technology | The Islamia University</p>
+
+                        <h3 class="bgcolor">2018 - 2020</h3>
+                        <p>Fsc Medical | Punjab Group of Colleges</p>
+
+                        <h3 class="bgcolor">2016 - 2018</h3>
+                        <p>Matriculation | Government High School Januwala</p>
+
+                    </div>
+
+                    <div class="tab-contents experiences" id="experiences">
+                        <h3 class="bgcolor">Third Unicorn</h3>
+                        <p>Works as a senior web developer</p>
+
+                        <h3 class="bgcolor">Pak Tech</h3>
+                        <p>Worked as an internee, learned a lot with professional training.</p>
+
+                        <h3 class="bgcolor">Zulfiqar</h3>
+                        <p>Worked as junior developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <main class="portfolio" id='portfolio'>
-      <h2 class='portfolio__header'>Projects</h2>
-      <div class="portfolio__container">
-        <article class='card'>
-          <img src='https://cdn-icons-png.flaticon.com/512/3437/3437297.png' alt="page">
-          <div class="text-container">
-            <h2>Connection Page</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </article>
-
-        <article class='card'>
-          <img src='https://cdn-icons-png.flaticon.com/512/993/993725.png' alt="page">
-          <div class="text-container">
-            <h2>Data Collection App</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </article>
-
-        <article class='card'>
-          <img src='https://cdn-icons-png.flaticon.com/512/1055/1055645.png' alt="app">
-          <div class="text-container">
-            <h2>Search App</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </article>
-
-        <article class='card'>
-          <img src='https://cdn-icons-png.flaticon.com/512/4257/4257674.png' alt="app">
-          <div class="text-container">
-            <h2>Favorite Spots</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </article>
-
-        <article class='card'>
-          <img src='https://cdn-icons-png.flaticon.com/512/5956/5956494.png' alt="gallery">
-          <div class="text-container">
-            <h2>Project Gallery</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </article>
-
-        <article class='card'>
-          <img src='https://cdn-icons-png.flaticon.com/512/891/891175.png' alt="Calculator">
-          <div class="text-container">
-            <h2>Calculator</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </article>
-      </div>
-
-      <section class='skills' id='skills'>
-        <h2>Skills</h2>
-        <article class="skills-container">
-          <div class="skills__item" data-aos='fade-up'>
-            <img src="https://cdn-icons-png.flaticon.com/512/1199/1199124.png" alt="JS">
-            <p>Javascript</p>
-          </div>
-
-          <div class="skills__item" data-aos='fade-up'>
-            <img src="https://cdn-icons-png.flaticon.com/512/1051/1051277.png" alt="HTML5">
-            <p>HTML5</p>
-          </div>
-
-          <div class="skills__item" data-aos='fade-up'>
-            <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="css">
-            <p>CSS3</p>
-          </div>
-
-          <div class="skills__item" data-aos='fade-up'>
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="figma">
-            <p>Figma</p>
-          </div>
-
-          <div class="skills__item" data-aos='fade-up'>
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968559.png" alt="Github">
-            <p>Github</p>
-          </div>
-        </article>
-      </section>
-
-      <footer>
-        <div class="wrapper">
-          <div class="footer__text-container" id='contact'>
-            <h2>Contact</h2>
-            <p>Lets connect if you want to collaborate...</p>
-          </div>
-          <div class="footer__text-container1">
-            <p><span class='phone'>Phone</span> <strong>+1 (111) 222-3333</strong></p>
-            <p><span class='email'>Email</span> <strong>123@gmail.com</strong></p>
-          </div>
+    <!------------------------------ Services ------------------------------>
+    <div id="services">
+        <div class="container">
+            <h2 class="sub-title">My Services<span class="color">.</span></h2>
+            <div class="row">
+                <div class="services-col">
+                    <i class="fa-brands fa-app-store"></i><br>
+                    <h3>Iphone App Designing</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit amet quos fugit? Quae animi laborum libero, est praesentium unde iure.</p><br>
+                    <a href="#">learn more</a>  
+                </div>
+                <div class="services-col">
+                    <i class="fa-brands fa-google-play"></i><br>
+                    <h3>Android App Designing</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit amet quos fugit? Quae animi laborum libero, est praesentium unde iure.</p><br>
+                    <a href="#">learn more</a>  
+                </div>
+                <div class="services-col">
+                    <i class="fa-brands fa-microsoft"></i></i>
+                    <h3>Web App Designing</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit amet quos fugit? Quae animi laborum libero, est praesentium unde iure.</p><br>
+                    <a href="#">learn more</a>  
+                </div>
+            </div>
         </div>
-        <hr class='footer__nav-hr'>
-        <nav class="footer__nav">
-          <h3>Sachin</h3>
-          <ul class='footer__nav-links'>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#portfolio">Projects</a></li>
-          </ul>
-          <p class='to-top'><a href="#top"><strong>BACK TO TOP</strong></a></p>
-        </nav>
-      </footer>
-    </main>
-  </div>
+    </div>
 
-  <script>
-    let btn = document.querySelector(".darkmode");
+    <!------------------------------ Portfolio ------------------------------>
+    <div id="portfolio">
+        <div class="container">
+            <h2 class="sub-title">My Work<span class="color">.</span></h2>
+            <div class="row">
+                <div class="portfolio-col">
+                    <img src="https://i.ibb.co/gvMycv9/work-1.png">
+                    <div class="layer">
+                        <h3>App Design</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae animi laboriosam explicabo Lorem ipsum dolor</p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-col">
+                    <img src="https://i.ibb.co/QDQ3VWv/work-2.png">
+                    <div class="layer">
+                        <h3>Shopping App Design</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae animi laboriosam explicabo Lorem ipsum dolor</p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-col">
+                    <img src="https://i.ibb.co/nc4vLyb/work-3.png">
+                    <div class="layer">
+                        <h3>Reading App Design</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae animi laboriosam explicabo Lorem ipsum dolor</p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+            <button class="btn">Learn More</button>
+        </div>
+    </div>
 
-    btn.addEventListener("click", () => {
-      if (btn.innerHTML === `<i class="fas fa-moon"></i>`) {
-        btn.innerHTML = `<i class="fas fa-sun"></i>`;
-        btn.style.color = "orange";
-        btn.style.backgroundColor = "rgb(43, 43, 43)";
-        document.body.classList.add("darkmode");
-      } else {
-        btn.innerHTML = `<i class="fas fa-moon"></i>`;
-        btn.style.color = "black";
-        btn.style.backgroundColor = "white";
-        document.body.classList.remove("darkmode");
-      }
-    });
+    <!------------------------------ Contact ------------------------------>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <form>
+                        <input type="text" name="fullName" id="full-name" placeholder="Your Name">
+                        <input type="email" name="Email" id="email" placeholder="Your Email">
+                        <textarea name="message" id="message"rows="10" placeholder="Your Message ..."></textarea>
+                        <input type="submit" value="Submit" class="btn2">
+                    </form>
+                </div>
+                <div class="contact-right">
+                    <h2 class="sub-title">My Contact<span class="color">.</span></h2>
+                    <p class="bgcolor"><i class="fa-sharp fa-solid fa-phone"></i> Phone</p>
+                    <p>+923053666838</p>
+                    <p class="bgcolor"><i class="fa-solid fa-paper-plane"></i> Email</p>
+                    <p>farmanali6349@gmail.com</p>
+                    <p class="bgcolor"><i class="fa-solid fa-user"></i> Social Profiles</p>
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  </script>
+    <footer>
+        <div class="container">
+            <p>Copyright © 2023 <span class="color">F</span>arman<span class="color">.</span> Ali  | All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
