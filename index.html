@@ -502,264 +502,190 @@
       margin-bottom: -5px;
     }
 
-    main .time-line {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 24px;
+    /* ------------------- Footer ------------------- */
+    footer {
+      background: var(--secondary-color);
+      text-align: center;
     }
 
-    main .time-line-item {
-      line-height: 0;
-      padding-left: 40px;
-      padding-bottom: 24px;
-      position: relative;
-    }
+    /* ------------------- CSS For Mobile Screens ------------------- */
 
-    main .time-line-item::before {
-      content: "";
-      display: block;
-      position: absolute;
-      height: 100%;
-      left: 5px;
-      transform: translateX(-50%);
-      width: 1px;
-      background-color: #f3f3f3;
-    }
-
-    main .time-line-item::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #979797;
-    }
-
-    main .time-line-item:nth-child(2n)::after {
-      background-color: #0067f6;
-    }
-
-    main .time-line-item:not(:first-child)::after {
-      top: 5px;
-    }
-
-    main .time-line-item:last-child {
-      padding-bottom: 0;
-    }
-
-    main .time-line-item .badge {
-      padding: 6px 10px;
-      font-size: 8px;
-      font-weight: 500;
-      line-height: 1;
-      border-radius: 2px;
-      margin-bottom: 8px;
-    }
-
-    main .time-line-item-title {
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 2px;
-    }
-
-    main .time-line-item-subtitle {
-      font-size: 10px;
-      font-weight: 500;
-      line-height: 1.6;
-      color: #a7a7a7;
-      margin-bottom: 3px;
-    }
-
-    main .time-line-item-content {
-
-      /* ------------------- Footer ------------------- */
-      footer {
-        background: var(--secondary-color);
-        text-align: center;
+    @media screen and (max-width: 890px) {
+      #header nav ul li a .color {
+        color: black;
       }
 
-      /* ------------------- CSS For Mobile Screens ------------------- */
+      #header {
+        background-image: url('https://i.ibb.co/0BhZxsw/background-mobile.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
 
-      @media screen and (max-width: 890px) {
-        #header nav ul li a .color {
-          color: black;
-        }
+      nav ul {
+        position: absolute;
+        top: 0px;
+        right: -500px;
+        height: 100vh;
+        width: 40%;
+        background: var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        padding: 25px 25px;
+        z-index: 4;
+      }
 
-        #header {
-          background-image: url('https://i.ibb.co/0BhZxsw/background-mobile.png');
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: cover;
-          background-attachment: fixed;
-        }
+      nav ul .fa-solid {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        transition: color 0.5s;
+      }
 
-        nav ul {
-          position: absolute;
-          top: 0px;
-          right: -500px;
-          height: 100vh;
-          width: 40%;
-          background: var(--primary-color);
-          display: flex;
-          flex-direction: column;
-          padding: 25px 25px;
-          z-index: 4;
-        }
+      nav ul .fa-solid:hover {
+        color: black;
+      }
 
-        nav ul .fa-solid {
-          position: absolute;
-          top: 15px;
-          right: 15px;
-          transition: color 0.5s;
-        }
-
-        nav ul .fa-solid:hover {
-          color: black;
-        }
-
-        nav .fa-solid,
-        nav p {
-          display: block;
-          font-size: 35px;
-          cursor: pointer;
-
-        }
-
-        nav ul li a {
-          transition: color 0.5s;
-          font-size: 23px;
-          margin-top: 15px;
-        }
-
-        nav ul li a:hover {
-          color: black;
-        }
-
-        .header-text {
-          margin-top: 250px;
-        }
-
-        .header-text p {
-          font-size: 27px;
-        }
-
-        .header-text h1 {
-          font-size: 45px;
-        }
+      nav .fa-solid,
+      nav p {
+        display: block;
+        font-size: 35px;
+        cursor: pointer;
 
       }
 
-      @media screen and (max-width: 600px) {
-
-        /* -------------- Utility Clases ------------------ */
-        .sub-title {
-          font-size: 40px;
-        }
-
-        nav ul li a {
-          font-size: 20px;
-        }
-
-        .header-text {
-          margin-top: 250px;
-        }
-
-        .header-text p {
-          font-size: 25px;
-        }
-
-        .header-text h1 {
-          font-size: 40px;
-        }
-
-        /*------------------- About ---------------- */
-        #about .container .row {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .about-col-1 {
-          width: 80%;
-        }
-
-        /*------------------- Services Section ---------------- */
-        .services-col:hover {
-          transform: translateY(-10px);
-        }
-
-        /*------------------- Contact Section ---------------- */
-        #contact .row {
-          flex-direction: column;
-        }
-
-        #contact p {
-          font-size: 16px;
-        }
-
-        .contact-left {
-          order: 2;
-        }
-
-        .contact-right {
-          order: 1;
-        }
+      nav ul li a {
+        transition: color 0.5s;
+        font-size: 23px;
+        margin-top: 15px;
       }
 
-      @media screen and (max-width: 890px) {
-        .header-text {
-          margin-top: 200px;
-        }
-
-        .header-text p {
-          font-size: 20px;
-        }
-
-        .header-text h1 {
-          font-size: 35px;
-        }
+      nav ul li a:hover {
+        color: black;
       }
 
-      @media screen and (max-width: 502px) {
-        .header-text {
-          margin-top: 300px;
-        }
-
-        .header-text p {
-          font-size: 18px;
-        }
-
-        .header-text h1 {
-          font-size: 30px;
-        }
+      .header-text {
+        margin-top: 250px;
       }
 
-      @media screen and (max-width: 387px) {
-        .header-text {
-          margin-top: 250px;
-        }
-
-        .header-text h1 {
-          font-size: 28px;
-        }
+      .header-text p {
+        font-size: 27px;
       }
 
-      @media screen and (max-width: 364px) {
-        .header-text {
-          margin-top: 250px;
-        }
-
-        .header-text p {
-          font-size: 16px;
-        }
-
-        .header-text h1 {
-          font-size: 25px;
-        }
+      .header-text h1 {
+        font-size: 45px;
       }
+
+    }
+
+    @media screen and (max-width: 600px) {
+
+      /* -------------- Utility Clases ------------------ */
+      .sub-title {
+        font-size: 40px;
+      }
+
+      nav ul li a {
+        font-size: 20px;
+      }
+
+      .header-text {
+        margin-top: 250px;
+      }
+
+      .header-text p {
+        font-size: 25px;
+      }
+
+      .header-text h1 {
+        font-size: 40px;
+      }
+
+      /*------------------- About ---------------- */
+      #about .container .row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-col-1 {
+        width: 80%;
+      }
+
+      /*------------------- Services Section ---------------- */
+      .services-col:hover {
+        transform: translateY(-10px);
+      }
+
+      /*------------------- Contact Section ---------------- */
+      #contact .row {
+        flex-direction: column;
+      }
+
+      #contact p {
+        font-size: 16px;
+      }
+
+      .contact-left {
+        order: 2;
+      }
+
+      .contact-right {
+        order: 1;
+      }
+    }
+
+    @media screen and (max-width: 890px) {
+      .header-text {
+        margin-top: 200px;
+      }
+
+      .header-text p {
+        font-size: 20px;
+      }
+
+      .header-text h1 {
+        font-size: 35px;
+      }
+    }
+
+    @media screen and (max-width: 502px) {
+      .header-text {
+        margin-top: 300px;
+      }
+
+      .header-text p {
+        font-size: 18px;
+      }
+
+      .header-text h1 {
+        font-size: 30px;
+      }
+    }
+
+    @media screen and (max-width: 387px) {
+      .header-text {
+        margin-top: 250px;
+      }
+
+      .header-text h1 {
+        font-size: 28px;
+      }
+    }
+
+    @media screen and (max-width: 364px) {
+      .header-text {
+        margin-top: 250px;
+      }
+
+      .header-text p {
+        font-size: 16px;
+      }
+
+      .header-text h1 {
+        font-size: 25px;
+      }
+    }
   </style>
 </head>
 
@@ -857,41 +783,22 @@
 
           </div>
 
-          <div class="col-lg-6">
-            <h2 class="section-title">ประสบการณ์ระหว่างเรียน</h2>
-            <ul class="time-line">
-              <li class="time-line-item">
-                <h6 class="time-line-item-title">ออกแบบ ux/ui
-                  พัฒนาโปรแกรมเว็บไซต์แนะนำสถานที่ท่องเที่ยวในอำเภอสังคม จ.หนองคาย ด้วย Figma</h6>
-              </li>
+          <div class="tab-contents experiences" id="experiences">
 
-              <li class="time-line-item">
-                <h6 class="time-line-item-title">เข้าร่วมประกวด การออกแบบแบนเนอร์ ประเภทเดี่ยว
-                  ในโครงการประกวดสร้างสื่อสร้างสรรค์ หัวข้อ รณรงค์ต่อต้านยาเสพติด
-                  รับรางวัลรองชนะเลิศอันดับหนึ่ง</h6>
-              </li>
+            <h4><i class="fa fa-circle"></i> ออกแบบ UX/UI และพัฒนาโปรแกรมเว็บไซต์เพื่อแนะนำสถานที่ท่องเที่ยวใน
+              อำเภอสังคม
+              จังหวัดหนองคาย โดยใช้ Figma</h4>
 
-              <li class="time-line-item">
-                <h6 class="time-line-item-title">Project IOT เปิดปิดไฟผ่านมือถือด้วย Kidbright</h6>
-              </li>
+            <p>เข้าร่วมประกวด การออกแบบแบนเนอร์ ประเภทเดี่ยว ในโครงการประกวดสร้างสื่อสร้างสรรค์ หัวข้อ
+              รณรงค์ต่อต้านยาเสพติด รับรางวัลรองชนะเลิศอันดับหนึ่ง</p>
+            <p>Project IOT เปิดปิดไฟผ่านมือถือด้วย Kidbright</p>
+            <p>Project สร้างเว็บไซต์โดยใช้ HTML CSS Framework และ JavaScript ในการสร้างเว็บสะสมผลงาน</p>
+            <p>Project พัฒนาเว็บแอพพลิเคชันโดยใช้ Laravel framework</p>
+            <p>สร้างสื่อ Infographic ในหัวข้อ เทคโนโลยีอนาคตรักษ์โลก</p>
+            <p>ออกแบบ ux/ui ระบบจองโฮมสเตย์บ้านโพธิ์ จังหวัดหนองคาย โดยใช้โปรแกรม Figma</p>
+            <p>สร้างเว็บไซต์จองโรงแรมและรีสอร์ท โดยใช้ PHP MyAdmin ที่ใช้จัดการฐานข้อมูล </p>
 
-              <li class="time-line-item">
-                <h6 class="time-line-item-title">Project สร้างเว็บไซต์โดยใช้ HTML และ CSS Framework
-                  ในการสร้างเว็บสะสมผลงาน</h6>
-              </li>
-
-              <li class="time-line-item">
-                <h6 class="time-line-item-title">สร้างสื่อ Infographic ในหัวข้อ เทคโนโลยีอนาคตรักษ์โลก
-                </h6>
-              </li>
-
-              <li class="time-line-item">
-                <h6 class="time-line-item-title">สร้างเว็บไซต์จองโรงแรม</h6>
-              </li>
-
-            </ul>
           </div>
-
 
 
         </div>
